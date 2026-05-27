@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VANTEK STORE</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* ===================================================== */
+/* ================= CONFIG GENERAL ==================== */
+/* ===================================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f5f5;
+overflow-x:hidden;
+color:#222;
+}
+
+/* ===================================================== */
+/* ==================== LOADER ========================= */
+/* ===================================================== */
+
+.loader{
+position:fixed;
+width:100%;
+height:100vh;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+flex-direction:column;
+}
+
+.loader h1{
+font-size:60px;
+color:#ff7a00;
+}
+
+.loader span{
+color:#222;
+}
+
+.loader-circle{
+width:80px;
+height:80px;
+border:8px solid #ddd;
+border-top:8px solid #ff7a00;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin-top:20px;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+/* ===================================================== */
+/* ==================== HEADER ========================= */
+/* ===================================================== */
+
+header{
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:white;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+box-shadow:0 3px 15px rgba(0,0,0,0.08);
+}
+
+.logo{
+font-size:34px;
+font-weight:800;
+color:#222;
+}
+
+.logo span{
+color:#ff7a00;
+}
+
+nav a{
+text-decoration:none;
+margin-left:25px;
+font-weight:600;
+color:#333;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff7a00;
+}
+
+.header-icons{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.header-icons i{
+font-size:22px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.header-icons i:hover{
+color:#ff7a00;
+transform:scale(1.1);
+}
+
+.cart{
+background:#ff7a00;
+padding:12px 20px;
+border-radius:40px;
+color:white;
+font-weight:700;
+}
+
+/* ===================================================== */
+/* ===================== HERO ========================== */
+/* ===================================================== */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:150px 7%;
+background:linear-gradient(to right,#ffffff,#ffe8cc);
+flex-wrap:wrap;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h1{
+font-size:85px;
+line-height:1.1;
+margin-bottom:20px;
+color:#222;
+}
+
+.hero-text h1 span{
+color:#ff7a00;
+}
+
+.hero-text p{
+font-size:20px;
+line-height:1.9;
+margin-bottom:35px;
+color:#555;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+}
+
+.btn{
+padding:16px 35px;
+border-radius:40px;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+}
+
+.btn-primary{
+background:#ff7a00;
+color:white;
+}
+
+.btn-primary:hover{
+transform:translateY(-5px);
+}
+
+.btn-secondary{
+border:2px solid #ff7a00;
+color:#ff7a00;
+}
+
+.btn-secondary:hover{
+background:#ff7a00;
+color:white;
+}
+
+.hero-image img{
+width:550px;
+border-radius:30px;
+}
+
+/* ===================================================== */
+/* ===================== SEARCH ======================== */
+/* ===================================================== */
+
+.search-section{
+padding:30px 7%;
+background:white;
+display:flex;
+justify-content:center;
+}
+
+.search-box{
+width:80%;
+background:#f1f1f1;
+padding:18px;
+border-radius:50px;
+display:flex;
+align-items:center;
+}
+
+.search-box input{
+width:100%;
+border:none;
+background:none;
+outline:none;
+font-size:17px;
+}
+
+.search-box i{
+font-size:22px;
+color:#ff7a00;
+}
+
+/* ===================================================== */
+/* =================== SECTION TITLE =================== */
+/* ===================================================== */
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:60px;
+color:#222;
+margin-bottom:10px;
+}
+
+.section-title span{
+color:#ff7a00;
+}
+
+/* ===================================================== */
+/* ==================== CATEGORIES ===================== */
+/* ===================================================== */
+
+.categories{
+padding:100px 7%;
+}
+
+.category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.category-card{
+background:white;
+padding:30px;
+border-radius:25px;
+text-align:center;
+transition:0.4s;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+cursor:pointer;
+}
+
+.category-card:hover{
+transform:translateY(-10px);
+}
+
+.category-card i{
+font-size:60px;
+color:#ff7a00;
+margin-bottom:20px;
+}
+
+.category-card h3{
+font-size:26px;
+}
+
+/* ===================================================== */
+/* ===================== PRODUCTS ====================== */
+/* ===================================================== */
+
+.products{
+padding:100px 7%;
+background:#fff3e6;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.product-card{
+background:white;
+border-radius:25px;
+overflow:hidden;
+transition:0.4s;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+position:relative;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+}
+
+.discount{
+position:absolute;
+top:15px;
+left:15px;
+background:#ff3d3d;
+color:white;
+padding:8px 14px;
+border-radius:20px;
+font-size:14px;
+font-weight:700;
+}
+
+.product-card img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.product-info{
+padding:25px;
+}
+
+.product-info h3{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.stars{
+color:gold;
+margin-bottom:15px;
+}
+
+.product-info p{
+line-height:1.8;
+color:#555;
+margin-bottom:15px;
+}
+
+.price{
+font-size:32px;
+font-weight:700;
+color:#ff7a00;
+margin-bottom:20px;
+}
+
+.buy-btn{
+display:inline-block;
+padding:14px 30px;
+background:#ff7a00;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.buy-btn:hover{
+transform:scale(1.05);
+}
+
+/* ===================================================== */
+/* ==================== PROMOS ========================= */
+/* ===================================================== */
+
+.promos{
+padding:100px 7%;
+}
+
+.promo-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.promo-card{
+background:white;
+padding:40px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.4s;
+}
+
+.promo-card:hover{
+transform:translateY(-10px);
+}
+
+.promo-card h3{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.promo-card p{
+line-height:1.8;
+margin-bottom:20px;
+}
+
+.promo-card h4{
+font-size:40px;
+color:#ff7a00;
+margin-bottom:20px;
+}
+
+/* ===================================================== */
+/* ===================== COUNTDOWN ===================== */
+/* ===================================================== */
+
+.countdown{
+padding:100px 7%;
+background:#222;
+color:white;
+text-align:center;
+}
+
+.countdown h2{
+font-size:60px;
+margin-bottom:30px;
+}
+
+.timer{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.time-box{
+background:#ff7a00;
+padding:30px;
+border-radius:20px;
+width:150px;
+}
+
+.time-box h3{
+font-size:45px;
+}
+
+/* ===================================================== */
+/* ===================== CART ========================== */
+/* ===================================================== */
+
+.cart-section{
+padding:100px 7%;
+background:white;
+}
+
+.cart-container{
+background:#fff3e6;
+padding:40px;
+border-radius:25px;
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+padding:15px;
+background:white;
+margin-bottom:15px;
+border-radius:15px;
+}
+
+.checkout-btn{
+padding:16px 35px;
+background:#ff7a00;
+color:white;
+border:none;
+border-radius:40px;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+margin-top:20px;
+}
+
+/* ===================================================== */
+/* ===================== CHATBOT ======================= */
+/* ===================================================== */
+
+.chatbot{
+position:fixed;
+bottom:20px;
+right:20px;
+width:320px;
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+z-index:9999;
+}
+
+.chat-header{
+background:#ff7a00;
+padding:18px;
+color:white;
+font-weight:700;
+text-align:center;
+}
+
+.chat-body{
+height:220px;
+padding:15px;
+overflow-y:auto;
+background:#f9f9f9;
+}
+
+.bot-message,
+.user-message{
+padding:12px;
+margin-bottom:10px;
+border-radius:15px;
+max-width:80%;
+}
+
+.bot-message{
+background:#ffe8cc;
+}
+
+.user-message{
+background:#ff7a00;
+color:white;
+margin-left:auto;
+}
+
+.chat-input{
+display:flex;
+}
+
+.chat-input input{
+flex:1;
+padding:15px;
+border:none;
+background:#f1f1f1;
+}
+
+.chat-input button{
+padding:15px;
+border:none;
+background:#ff7a00;
+color:white;
+font-weight:700;
+cursor:pointer;
+}
+
+/* ===================================================== */
+/* ===================== FOOTER ======================== */
+/* ===================================================== */
+
+footer{
+background:#222;
+padding:60px 7%;
+color:white;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+.footer-box h3{
+margin-bottom:20px;
+font-size:26px;
+}
+
+.footer-box p{
+line-height:1.9;
+color:#ddd;
+}
+
+.socials{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+
+.socials i{
+width:45px;
+height:45px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#ff7a00;
+border-radius:50%;
+cursor:pointer;
+}
+
+/* ===================================================== */
+/* ==================== RESPONSIVE ===================== */
+/* ===================================================== */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-image img{
+width:100%;
+margin-top:40px;
+}
+
+.hero-text h1{
+font-size:55px;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div class="loader" id="loader">
+
+<h1>VAN<span>TEK</span></h1>
+
+<div class="loader-circle"></div>
+
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+VAN<span>TEK</span>
+</div>
+
+<nav>
+
+<a href="#">Inicio</a>
+<a href="#">Productos</a>
+<a href="#">Promos</a>
+<a href="#">Categorías</a>
+<a href="#">Contacto</a>
+
+</nav>
+
+<div class="header-icons">
+
+<i class="fa-solid fa-heart"></i>
+
+<i class="fa-solid fa-user"></i>
+
+<div class="cart">
+🛒 <span id="cart-count">0</span>
+</div>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>
+Tecnología para tu <span>día a día</span>
+</h1>
+
+<p>
+Encuentra accesorios tecnológicos modernos, útiles y accesibles para estudiar, trabajar y disfrutar.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="btn btn-primary">
+Comprar ahora
+</a>
+
+<a href="#" class="btn btn-secondary">
+Explorar
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<!-- SEARCH -->
+
+<section class="search-section">
+
+<div class="search-box">
+
+<input type="text" placeholder="Buscar productos...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+</section>
+
+<!-- CATEGORIES -->
+
+<section class="categories">
+
+<div class="section-title">
+
+<h2>
+Nuestras <span>Categorías</span>
+</h2>
+
+</div>
+
+<div class="category-grid">
+
+<div class="category-card">
+<i class="fa-solid fa-headphones"></i>
+<h3>Audífonos</h3>
+</div>
+
+<div class="category-card">
+<i class="fa-solid fa-keyboard"></i>
+<h3>Teclados</h3>
+</div>
+
+<div class="category-card">
+<i class="fa-solid fa-computer"></i>
+<h3>Laptops</h3>
+</div>
+
+<div class="category-card">
+<i class="fa-solid fa-gamepad"></i>
+<h3>Gaming</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products">
+
+<div class="section-title">
+
+<h2>
+Productos <span>Populares</span>
+</h2>
+
+</div>
+
+<div class="product-grid">
+
+<div class="product-card">
+
+<div class="discount">
+-20%
+</div>
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-info">
+
+<h3>Audífonos Pro</h3>
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+Audífonos inalámbricos con sonido premium.
+</p>
+
+<div class="price">
+S/ 120
+</div>
+
+<a class="buy-btn add-cart" data-name="Audífonos Pro" data-price="120">
+Agregar
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="discount">
+-15%
+</div>
+
+<img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-info">
+
+<h3>Laptop Gamer</h3>
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+Laptop moderna y potente para estudio y gaming.
+</p>
+
+<div class="price">
+S/ 3200
+</div>
+
+<a class="buy-btn add-cart" data-name="Laptop Gamer" data-price="3200">
+Agregar
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="discount">
+-10%
+</div>
+
+<img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-info">
+
+<h3>Teclado RGB</h3>
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+Teclado mecánico con luces LED.
+</p>
+
+<div class="price">
+S/ 180
+</div>
+
+<a class="buy-btn add-cart" data-name="Teclado RGB" data-price="180">
+Agregar
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROMOS -->
+
+<section class="promos">
+
+<div class="section-title">
+
+<h2>
+Promociones <span>Especiales</span>
+</h2>
+
+</div>
+
+<div class="promo-container">
+
+<div class="promo-card">
+
+<h3>Combo Gamer</h3>
+
+<p>
+Teclado + mouse + headset gamer.
+</p>
+
+<h4>S/ 450</h4>
+
+<a class="buy-btn">
+Comprar
+</a>
+
+</div>
+
+<div class="promo-card">
+
+<h3>Pack Oficina</h3>
+
+<p>
+Laptop + teclado inalámbrico + mouse.
+</p>
+
+<h4>S/ 3500</h4>
+
+<a class="buy-btn">
+Comprar
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section class="countdown">
+
+<h2>
+Oferta termina en:
+</h2>
+
+<div class="timer">
+
+<div class="time-box">
+<h3 id="days">00</h3>
+<p>Días</p>
+</div>
+
+<div class="time-box">
+<h3 id="hours">00</h3>
+<p>Horas</p>
+</div>
+
+<div class="time-box">
+<h3 id="minutes">00</h3>
+<p>Minutos</p>
+</div>
+
+<div class="time-box">
+<h3 id="seconds">00</h3>
+<p>Segundos</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CART -->
+
+<section class="cart-section">
+
+<div class="section-title">
+
+<h2>
+Tu <span>Carrito</span>
+</h2>
+
+</div>
+
+<div class="cart-container">
+
+<div id="cart-items"></div>
+
+<h3>
+Total: S/ <span id="cart-total">0</span>
+</h3>
+
+<button class="checkout-btn">
+Finalizar compra
+</button>
+
+</div>
+
+</section>
+
+<!-- CHATBOT -->
+
+<div class="chatbot">
+
+<div class="chat-header">
+🤖 VANTEK BOT
+</div>
+
+<div class="chat-body" id="chat-body">
+
+<div class="bot-message">
+Hola 👋 Bienvenido a VANTEK
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input type="text" id="userInput" placeholder="Escribe aquí...">
+
+<button onclick="sendMessage()">
+Enviar
+</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-box">
+
+<h3>VANTEK</h3>
+
+<p>
+Tecnología moderna y accesible para estudiantes y emprendedores.
+</p>
+
+<div class="socials">
+
+<i class="fa-brands fa-facebook-f"></i>
+
+<i class="fa-brands fa-instagram"></i>
+
+<i class="fa-brands fa-tiktok"></i>
+
+</div>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Contacto</h3>
+
+<p>📍 Lima, Perú</p>
+
+<p>📞 +51 999 999 999</p>
+
+<p>📧 vantek@gmail.com</p>
+
+</div>
+
+</footer>
+
+<script>
+
+/* ==================== LOADER ==================== */
+
+window.addEventListener('load',()=>{
+
+setTimeout(()=>{
+
+document.getElementById('loader').style.display='none';
+
+},2000);
+
+});
+
+/* ==================== CART ==================== */
+
+const buttons=document.querySelectorAll('.add-cart');
+
+const cartItems=document.getElementById('cart-items');
+
+const cartTotal=document.getElementById('cart-total');
+
+const cartCount=document.getElementById('cart-count');
+
+let total=0;
+
+let count=0;
+
+buttons.forEach(button=>{
+
+button.addEventListener('click',()=>{
+
+const name=button.getAttribute('data-name');
+
+const price=parseInt(button.getAttribute('data-price'));
+
+const item=document.createElement('div');
+
+item.classList.add('cart-item');
+
+item.innerHTML=`<span>${name}</span><span>S/ ${price}</span>`;
+
+cartItems.appendChild(item);
+
+total+=price;
+
+count++;
+
+cartTotal.innerText=total;
+
+cartCount.innerText=count;
+
+});
+
+});
+
+/* ==================== CHECKOUT ==================== */
+
+document.querySelector('.checkout-btn').addEventListener('click',()=>{
+
+alert('✅ Compra realizada con éxito');
+
+});
+
+/* ==================== CHATBOT ==================== */
+
+function sendMessage(){
+
+const input=document.getElementById('userInput');
+
+const chatBody=document.getElementById('chat-body');
+
+if(input.value==='') return;
+
+const user=document.createElement('div');
+
+user.classList.add('user-message');
+
+user.innerText=input.value;
+
+chatBody.appendChild(user);
+
+const bot=document.createElement('div');
+
+bot.classList.add('bot-message');
+
+if(input.value.toLowerCase().includes('hola')){
+
+bot.innerText='Hola 😎 Bienvenido a VANTEK';
+
+}
+
+else if(input.value.toLowerCase().includes('precio')){
+
+bot.innerText='Tenemos descuentos especiales 🔥';
+
+}
+
+else{
+
+bot.innerText='Gracias por comunicarte con nosotros ❤️';
+
+}
+
+setTimeout(()=>{
+
+chatBody.appendChild(bot);
+
+chatBody.scrollTop=chatBody.scrollHeight;
+
+},500);
+
+input.value='';
+
+}
+
+/* ==================== COUNTDOWN ==================== */
+
+let time=500000;
+
+setInterval(()=>{
+
+const days=Math.floor(time/86400);
+
+const hours=Math.floor((time%86400)/3600);
+
+const minutes=Math.floor((time%3600)/60);
+
+const seconds=time%60;
+
+document.getElementById('days').innerText=days;
+
+document.getElementById('hours').innerText=hours;
+
+document.getElementById('minutes').innerText=minutes;
+
+document.getElementById('seconds').innerText=seconds;
+
+time--;
+
+},1000);
+
+</script>
+
+</body>
+
+</html>
